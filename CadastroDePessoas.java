@@ -35,6 +35,18 @@ public class CadastroDePessoas {
         System.out.println("Pessoa não encontrada: " + nome);
     }
 
+    // Método para excluir uma pessoa
+    public void excluirPessoa(String nome) {
+        for (Pessoa pessoa : pessoas) {
+            if (pessoa.getNome().equals(nome)) {
+                pessoas.remove(pessoa);
+                System.out.println("Pessoa excluída: " + pessoa);
+                return;
+            }
+        }
+        System.out.println("Pessoa não encontrada: " + nome);
+    }
+
     public static void main(String[] args) {
         CadastroDePessoas cadastro = new CadastroDePessoas();
 
@@ -48,6 +60,12 @@ public class CadastroDePessoas {
 
         // Alterando uma pessoa
         cadastro.alterarPessoa("Maria", "Maria Silva", 26);
+
+        // Excluindo uma pessoa
+        cadastro.excluirPessoa("José");
+
+        // Listando todas as pessoas novamente
+        cadastro.listarPessoas();
     }
 
     private static class Pessoa {
