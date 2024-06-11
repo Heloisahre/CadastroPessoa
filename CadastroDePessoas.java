@@ -14,6 +14,14 @@ public class CadastroDePessoas {
         System.out.println("Pessoa adicionada: " + pessoa);
     }
 
+    // Método para listar todas as pessoas
+    public void listarPessoas() {
+        System.out.println("Lista de Pessoas:");
+        for (Pessoa pessoa : pessoas) {
+            System.out.println(pessoa);
+        }
+    }
+
     public static void main(String[] args) {
         CadastroDePessoas cadastro = new CadastroDePessoas();
 
@@ -21,6 +29,9 @@ public class CadastroDePessoas {
         cadastro.adicionarPessoa(new Pessoa("João", 30));
         cadastro.adicionarPessoa(new Pessoa("Maria", 25));
         cadastro.adicionarPessoa(new Pessoa("José", 40));
+
+        // Listando todas as pessoas
+        cadastro.listarPessoas();
     }
 
     private static class Pessoa {
